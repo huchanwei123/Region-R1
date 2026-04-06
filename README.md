@@ -25,11 +25,14 @@ pip install faiss-gpu  # or faiss-cpu
 
 ### 1. Prepare Data
 
-Create a re-ranking dataset from InfoSeek knowledge base with EVA-CLIP hard negatives:
+Create a re-ranking dataset from InfoSeek or E-VQA knowledge base with EVA-CLIP hard negatives:
 
 ```bash
-# Set external data path (optional, defaults to ~/Desktop/InfoSeek-data)
-export INFOSEEK_DATA_ROOT=/path/to/infoseek-data
+# Set dataset name: "InfoSeek" (default) or "EVQA"
+export DATASET_NAME=InfoSeek
+
+# Set external data path (optional, defaults to ~/Desktop/<DATASET_NAME>-data)
+export DATA_ROOT=/path/to/dataset-data
 
 python prepare_data.py --num_entries 1000 --visualize_samples 20
 ```
@@ -41,7 +44,7 @@ python prepare_data.py --num_entries 1000 --visualize_samples 20
 | `--visualize_samples` | 20 | Number of sample visualizations to generate |
 | `--device` | `cuda:0` | CUDA device |
 
-**Output:** `Reranker_Dataset/InfoSeek_top10_parquet/` (train.parquet, val.parquet)
+**Output:** `Reranker_Dataset/<DATASET_NAME>_top10_parquet/` (train.parquet, val.parquet)
 
 ### 2. Train
 
@@ -106,7 +109,7 @@ Region-R1/
 ├── utils.py                    # CLIP scoring, bbox parsing, MRR/NDCG metrics
 ├── inference.py                # Post-training inference/testing
 ├── logging_config.py           # Logging setup
-├── prepare_data.py             # Dataset preparation from InfoSeek
+├── prepare_data.py             # Dataset preparation (InfoSeek or E-VQA)
 ├── evaluate_cropping.py        # Checkpoint evaluation (MRR improvement)
 ├── evaluation_callback.py      # Training callback for eval during training
 ├── training_logger_callback.py # Training callback for metrics logging

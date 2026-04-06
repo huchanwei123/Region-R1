@@ -1,0 +1,37 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Data & outputs
+Reranker_Dataset/
+infoseek_data/
+runs/
+outputs/
+tmp_output/
+*.parquet
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Evaluation outputs
+evaluation_results/
+test_eval_results/
+improvement_viz/
+comparison_viz/
+cropped_outputs/
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+ALL_PYTHON_FILES.txt
+*.log
+wandb/

@@ -1,5 +1,5 @@
 """
-Script to create a re-ranking dataset from InfoSeek knowledge base.
+Script to create a re-ranking dataset from InfoSeek or E-VQA knowledge base.
 Selects entries with at least 2 images, creating query-candidate pairs.
 Uses EVA-CLIP + FAISS for hard negative sampling.
 """
@@ -19,7 +19,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datasets import Dataset
 
-from config import INFOSEEK_DATA_ROOT, BASE_DIR
+from config import DATA_ROOT, BASE_DIR, DATASET_NAME
 from logging_config import setup_logging
 
 logger = logging.getLogger(__name__)
@@ -274,7 +274,7 @@ def create_rerank_dataset(
     device: str = 'cuda:0'
 ) -> List[ReRankingInstance]:
     """
-    Create a re-ranking dataset from InfoSeek knowledge base using EVA-CLIP with FAISS.
+    Create a re-ranking dataset from InfoSeek or E-VQA knowledge base using EVA-CLIP with FAISS.
     """
     random.seed(seed)
 
@@ -558,13 +558,13 @@ def main():
     setup_logging(level=args.log_level)
 
     # Paths
-    url_mapping_path = INFOSEEK_DATA_ROOT / "url_to_path_mapping.json"
-    image_root = INFOSEEK_DATA_ROOT
-    knowledge_base_path = INFOSEEK_DATA_ROOT / "wiki_100_dict_v4.json"
-    faiss_index_path = INFOSEEK_DATA_ROOT / "eva-clip" / "faiss_index_I"
+    url_mapping_path = DATA_ROOT / "url_to_path_mapping.json"
+    image_root = DATA_ROOT
+    knowledge_base_path = DATA_ROOT / "wiki_100_dict_v4.json"
+    faiss_index_path = DATA_ROOT / "eva-clip" / "faiss_index_I"
 
-    output_folder = BASE_DIR / "infoseek_data" / "outputs"
-    output_path = output_folder / "infoseek_rerank_dataset_evaclip_hard_neg.json"
+    output_folder = BASE_DIR / "dataset_outputs" / DATASET_NAME
+    output_path = output_folder / f"{DATASET_NAME}_rerank_dataset_evaclip_hard_neg.json"
     parquet_output_dir = output_folder / "parquet_data_evaclip_hard_neg"
     visualization_dir = output_folder / "visualizations"
 

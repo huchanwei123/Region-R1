@@ -21,13 +21,17 @@ EVAL_OUTPUT_DIR = RUN_OUTPUT_DIR / "evaluations"
 MODEL_OUTPUT_DIR = RUN_OUTPUT_DIR / "checkpoints"
 FINAL_MODEL_DIR = RUN_OUTPUT_DIR / "final_model"
 
-DATA_DIR = BASE_DIR / "Reranker_Dataset" / "InfoSeek_top10_parquet"
+# Dataset directory - supports InfoSeek or E-VQA datasets
+# Override via DATASET_NAME env var: "InfoSeek" (default) or "EVQA"
+DATASET_NAME = os.environ.get("DATASET_NAME", "InfoSeek")
+DATA_DIR = BASE_DIR / "Reranker_Dataset" / f"{DATASET_NAME}_top10_parquet"
 FEATURE_CACHE_PATH = DATA_DIR / "test_candidate_features.pt"
 
 # External data paths - can be overridden by environment variables
-INFOSEEK_DATA_ROOT = Path(os.environ.get(
-    "INFOSEEK_DATA_ROOT",
-    Path.home() / "Desktop" / "InfoSeek-data"
+# Supports both InfoSeek and E-VQA datasets
+DATA_ROOT = Path(os.environ.get(
+    "DATA_ROOT",
+    Path.home() / "Desktop" / f"{DATASET_NAME}-data"
 ))
 
 # =============================================================================
