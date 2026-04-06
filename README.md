@@ -1,6 +1,6 @@
 # Region-R1
 
-Train a Vision-Language Model (Qwen2.5-VL-3B) to intelligently crop query images for improved image retrieval, using GRPO (Group Relative Policy Optimization).
+Train a Vision-Language Model (Qwen2.5-VL-3B) to intelligently crop query images for improved image retrieval, using our designed r-GRPO.
 
 Given a query image and a user question, the model decides whether to crop a specific region to better match relevant candidates in a retrieval database. It outputs either a bounding box via `image_zoom_in_tool` or `NO_CROP_NEEDED`. Training uses EVA-CLIP-8B as the reward model, measuring whether cropping improves retrieval metrics (MRR, NDCG, rank, margin).
 
