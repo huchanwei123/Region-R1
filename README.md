@@ -1,7 +1,5 @@
 # Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking
 
-This repository provides the training, evaluation, and analysis pipelines for the paper [Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking](https://arxiv.org/abs/2604.05268).
-
 <div id="top" align="center">
 
 ![Code License](https://img.shields.io/badge/Code%20License-CC%20BY%204.0-brightgreen)
@@ -14,6 +12,11 @@ This repository provides the training, evaluation, and analysis pipelines for th
   <p><em>Figure 1. Overview of Region-R1: Given an image-question pair, Region-R1 adaptively decides whether to retain the full image or crop a question-relevant region before scoring retrieved candidates, improving multi-modal re-ranking.</em></p>
 </div>
 
+## News
+- **[2026/04/07]** We released **Region-R1**, a reinforcement learning framework for query-side region cropping in multi-modal re-ranking. Check out our [paper](https://arxiv.org/abs/2604.05268) for more details.
+- **[2026/04/06]** 🎊 Our paper has been accepted to **ACL 2026 (Findings)**!!!
+
+
 ## Key Highlights
 
 - **Query-Side Region Cropping:** Formulates region selection as a decision-making problem — the model learns whether to retain the full image or focus on a question-relevant region to remove visual distractors before re-ranking.
@@ -23,10 +26,6 @@ This repository provides the training, evaluation, and analysis pipelines for th
 - **Candidate-Agnostic RL Framework:** Optimized directly for re-ranking objectives (MRR, NDCG, Rank, Margin) without requiring access to candidate images at decision time.
 
 - **State-of-the-Art Results:** Achieves conditional Recall@1 improvements of up to **20% on E-VQA** and **8% on InfoSeek**, outperforming EchoSight and OMGM baselines.
-
-## News
-- **[2026/04/07]** We released **Region-R1**, a reinforcement learning framework for query-side region cropping in multi-modal re-ranking. Check out our [paper](https://arxiv.org/abs/2604.05268) for more details.
-- **[2026/04/06]** Our paper has been accepted to **ACL 2026 (Findings)**!
 
 ## Installation
 
