@@ -9,10 +9,10 @@ This repository provides the training, evaluation, and analysis pipelines for th
 
 </div>
 
-<!-- <div align="center">
-  <img src="assets/overview.png" alt="overview" width="800"/>
+<div align="center">
+  <img src="assets/Overview.png" alt="overview" width="800"/>
   <p><em>Figure 1. Overview of Region-R1: Given an image-question pair, Region-R1 adaptively decides whether to retain the full image or crop a question-relevant region before scoring retrieved candidates, improving multi-modal re-ranking.</em></p>
-</div> -->
+</div>
 
 ## Key Highlights
 
