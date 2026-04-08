@@ -1,4 +1,4 @@
-# Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking
+# Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking (ACL 2026 Findings)
 
 <div id="top" align="center">
 
