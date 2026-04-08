@@ -2,7 +2,6 @@
 
 <div id="top" align="center">
 
-![Code License](https://img.shields.io/badge/Code%20License-CC%20BY%204.0-brightgreen)
 [![arXiv](https://img.shields.io/badge/arXiv-2604.05268-b31b1b.svg)](https://arxiv.org/abs/2604.05268)
 
 </div>
