@@ -26,6 +26,7 @@ This repository provides the training, evaluation, and analysis pipelines for th
 
 ## News
 - **[2026/04/07]** We released **Region-R1**, a reinforcement learning framework for query-side region cropping in multi-modal re-ranking. Check out our [paper](https://arxiv.org/abs/2604.05268) for more details.
+- **[2026/04/06]** Our paper has been accepted to **ACL 2026 (Findings)**!
 
 ## Installation
 
